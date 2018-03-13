@@ -13,14 +13,23 @@ const calculate = (operator,nums) =>{
   if(operator && nums){
     console.log('op n nums: ',operator, nums);
     let result = (operator === "add") ? add(nums): 
-    (operator === "subtract") ? subtract(nums): 
-    (operator === "divide") ? divide(nums): 
-    (operator === "multiply") ? multiply(nums): -10000;
+      (operator === "subtract") ? subtract(nums): 
+      (operator === "divide") ? divide(nums): 
+      (operator === "multiply") ? multiply(nums): "error";
     console.log('result: ',result);
     return result;
   }
 }
-if(operator && nums){calculate(operator,nums)}
+if(operator && nums){
+  if((operator === "add" ||
+    operator === "subtract"||
+    operator === "divide"||
+    operator === "multiply")&&(nums.length > 0)){
+      calculate(operator,nums)
+  }else{
+    process.stdout.write("please enter an operator and at least 2 numbers in the following format: [operator][space][number][space][number]\n example: add 5 6")
+  }
+}
 
 module.exports = {
   calculate
