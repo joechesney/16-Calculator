@@ -1,0 +1,24 @@
+{
+  "name": "16-Calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R list --colors --watch --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joechesney/16-Calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joechesney/16-Calculator/issues"
+  },
+  "homepage": "https://github.com/joechesney/16-Calculator#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.4"
+  }
+}
