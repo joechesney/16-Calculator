@@ -1,21 +1,23 @@
 #!/usr/bin/env node
-const add = require("./add"),
-subtract = require("./subtract"),
-divide = require("./divide"),
-multiply = require("./multiply");
+
+let myMaths = {
+  add: require("./add"),
+  subtract: require("./subtract"),
+  divide: require("./divide"),
+  multiply: require("./multiply")
+};
+
 
 [,,operator] = process.argv,
 [,,,...nums] = process.argv;
 const print = process.stdout.write;
 
+
 const calculate = (operator,nums) =>{
   nums = nums.map(num=>+num);
   if(operator && nums){
     console.log('op n nums: ',operator, nums);
-    let result = (operator === "add") ? add(nums): 
-      (operator === "subtract") ? subtract(nums): 
-      (operator === "divide") ? divide(nums): 
-      (operator === "multiply") ? multiply(nums): "error";
+    let result = myMaths[operator](nums);
     console.log('result: ',result);
     return result;
   }
